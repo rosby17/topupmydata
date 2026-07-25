@@ -574,28 +574,29 @@ export default function DashboardPage() {
               </div>
 
               {/* Add goal CTA */}
-              <button
-                onClick={() => setShowGoalModal(true)}
-                className="p-6 rounded-xl border flex flex-col justify-center items-center text-center transition-all hover:opacity-80 active:scale-95"
-                style={{
-                  backgroundColor: "#f5f3ee",
-                  borderColor: "#e6e4df",
-                  borderStyle: "dashed",
-                }}
-              >
-                <span
-                  className="material-symbols-outlined mb-3"
-                  style={{ fontSize: "40px", color: "#e4bdbc" }}
+              <Link href="/dashboard/create-campaign" className="w-full">
+                <button
+                  className="p-6 rounded-xl border flex flex-col justify-center items-center text-center transition-all hover:opacity-80 active:scale-95 w-full"
+                  style={{
+                    backgroundColor: "#f5f3ee",
+                    borderColor: "#e6e4df",
+                    borderStyle: "dashed",
+                  }}
                 >
-                  add_task
-                </span>
-                <h3 className="font-bold text-base" style={{ color: "#1b1c19" }}>
-                  Nouvel Objectif
-                </h3>
-                <p className="text-xs mt-1" style={{ color: "#5b403f" }}>
-                  Définissez un but pour vos soutiens
-                </p>
-              </button>
+                  <span
+                    className="material-symbols-outlined mb-3"
+                    style={{ fontSize: "40px", color: "#e4bdbc" }}
+                  >
+                    add_task
+                  </span>
+                  <h3 className="font-bold text-base" style={{ color: "#1b1c19" }}>
+                    Nouvel Objectif
+                  </h3>
+                  <p className="text-xs mt-1" style={{ color: "#5b403f" }}>
+                    Définissez un but pour vos soutiens
+                  </p>
+                </button>
+              </Link>
             </div>
           </section>
 
