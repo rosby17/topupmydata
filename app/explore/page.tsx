@@ -137,49 +137,87 @@ function ExploreInner() {
         className="mx-auto px-8 py-6 space-y-16"
         style={{ maxWidth: "1200px" }}
       >
-        {/* ── Hero ── */}
-        <section className="relative rounded-[2rem] overflow-hidden bg-white mb-16 py-24 px-8 text-center flex flex-col items-center justify-center border shadow-sm" style={{ borderColor: "#e4bdbc" }}>
-          <div className="relative z-10 max-w-3xl">
-            <h1 className="text-4xl md:text-6xl mb-6 text-[#1b1c19] font-bold leading-tight tracking-tight">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-8">
+          <div className="space-y-6">
+            <h1
+              className="text-4xl md:text-5xl font-bold leading-tight"
+              style={{ color: "#1b1c19", letterSpacing: "-0.02em" }}
+            >
               Rechargez les mégas de vos{" "}
               <span style={{ color: "#b20024" }}>créateurs préférés</span> ⚡
             </h1>
-            <p className="text-lg md:text-xl text-[#5b403f] mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p
+              className="text-lg leading-relaxed max-w-lg"
+              style={{ color: "#5b403f" }}
+            >
               Donnez-leur la force de continuer à produire de superbes contenus. Financez directement leur connexion internet pour propulser leurs streams, uploads et projets en ligne.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <div className="flex gap-4 flex-wrap">
               <a href="#cagnottes">
                 <button
-                  className="w-full sm:w-auto text-white px-8 py-4 rounded-full text-base font-bold shadow-md transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-2"
-                  style={{ backgroundColor: "#b20024" }}
+                  className="px-8 py-4 rounded-xl text-base font-bold shadow-md transition-all hover:opacity-90 active:scale-95 flex items-center gap-2"
+                  style={{ backgroundColor: "#b20024", color: "#ffffff" }}
                 >
                   <span className="material-symbols-outlined">explore</span>
                   Voir les cagnottes
                 </button>
               </a>
-              <a href="#pourquoi-nous-choisir">
+              <Link href="/pay">
                 <button
-                  className="w-full sm:w-auto bg-transparent border-2 text-[#1b1c19] px-8 py-4 rounded-full text-base font-bold hover:bg-gray-50 transition-all active:scale-95 flex items-center justify-center gap-2"
-                  style={{ borderColor: "#e4bdbc" }}
+                  className="px-8 py-4 rounded-xl text-base font-bold border transition-all hover:opacity-80 flex items-center gap-2"
+                  style={{ borderColor: "#b20024", color: "#b20024" }}
                 >
-                  <span className="material-symbols-outlined">help</span>
-                  Comment ça marche
+                  <span className="material-symbols-outlined">payments</span>
+                  Payer les mégas
                 </button>
-              </a>
+              </Link>
             </div>
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 pt-8 border-t" style={{ borderColor: "#e4bdbc" }}>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold mb-1" style={{ color: "#1b1c19" }}>2.4k+</span>
-                <span className="text-xs font-semibold text-[#5b403f]">Créateurs</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold mb-1" style={{ color: "#1b1c19" }}>18k+</span>
-                <span className="text-xs font-semibold text-[#5b403f]">Soutiens</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold mb-1" style={{ color: "#1b1c19" }}>90%</span>
-                <span className="text-xs font-semibold text-[#5b403f]">Reversés</span>
-              </div>
+            {/* Stats strip */}
+            <div className="flex gap-8 pt-2">
+              {[
+                { value: "2.4k+", label: "Créateurs" },
+                { value: "18k+", label: "Soutiens" },
+                { value: "90%", label: "Reversés" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <div className="text-2xl font-bold" style={{ color: "#b20024" }}>
+                    {s.value}
+                  </div>
+                  <div className="text-xs" style={{ color: "#5b403f" }}>
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Hero image */}
+          <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB2POkZZ_LTisfcNhjPujF7GaWHPXUmRGeBuDndDWbiXSFd_b88_JWvXNgrX0RUJXfrrTZXtH4B4uMBf7oN3MHGxpSj7Ao-xUvSwA8GW6BFplNKv88iqYBcXlaXnhRJf7_ypbrSScS_Wgo6kiH5xzxGIU9wHalH-iLz2B4_ehrzhyk3wTbUK55tBOZYDGM8txwTWKdRK3uJhS1IjC29rj89Dsk5eDl_QDgPDpPcpbeU39ivkowLH9lhW-aCtBsVWq5mMfZPOlw7JRP"
+              alt="Creator workspace"
+              className="w-full h-full object-cover"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to top, rgba(0,0,0,0.45), transparent)" }}
+            />
+            <div className="absolute bottom-6 left-6 text-white">
+              <span
+                className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-2"
+                style={{ backgroundColor: "rgba(73,101,70,0.9)" }}
+              >
+                Featured Creator
+              </span>
+              <h3 className="text-xl font-bold">Thomas Delaunay</h3>
+              <p className="text-sm opacity-90">Digital Artist • 85% Financé</p>
+            </div>
+            {/* Floating badge */}
+            <div
+              className="absolute top-4 right-4 px-3 py-2 rounded-xl text-xs font-bold shadow-lg"
+              style={{ backgroundColor: "rgba(255,255,255,0.95)", color: "#b20024" }}
+            >
+              🔥 12 soutiens aujourd&apos;hui
             </div>
           </div>
         </section>
@@ -234,13 +272,13 @@ function ExploreInner() {
                     className="w-full py-4 text-white rounded-xl text-lg font-bold shadow-md transition-all hover:opacity-90 active:scale-95"
                     style={{ backgroundColor: "#b20024" }}
                   >
-                    Soutenir Thomas (1 Go = 500 FCFA)
+                    Payer les mégas à Thomas
                   </button>
                 </Link>
-              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* ── Search & Filter ── */}
         <section className="space-y-5">
