@@ -64,7 +64,7 @@ export default function SignupPage() {
           {/* Headers */}
           <h1 className="text-3xl font-bold mb-2 text-[#1b1c19] tracking-tight">Créer un compte</h1>
           <p className="text-sm text-[#5b403f] mb-6">
-            Rejoignez-nous en tant que créateur ou supporter.
+            Rejoignez-nous en tant que créateur ou soutien.
           </p>
 
           {/* Role Selection Toggle */}
@@ -91,7 +91,7 @@ export default function SignupPage() {
               }`}
             >
               <span className="material-symbols-outlined mb-1 text-xl">favorite</span>
-              <span className="text-xs font-bold text-center">Supporter</span>
+              <span className="text-xs font-bold text-center">Soutien</span>
             </button>
           </div>
 

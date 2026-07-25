@@ -177,7 +177,7 @@ function ExploreInner() {
             <div className="flex gap-8 pt-2">
               {[
                 { value: "2.4k+", label: "Créateurs" },
-                { value: "18k+", label: "Supporters" },
+                { value: "18k+", label: "Soutiens" },
                 { value: "90%", label: "Reversés aux créateurs" },
               ].map((s) => (
                 <div key={s.label}>
@@ -218,7 +218,7 @@ function ExploreInner() {
               className="absolute top-4 right-4 px-3 py-2 rounded-xl text-xs font-bold shadow-lg"
               style={{ backgroundColor: "rgba(255,255,255,0.95)", color: "#b20024" }}
             >
-              🔥 12 supporters aujourd&apos;hui
+              🔥 12 soutiens aujourd&apos;hui
             </div>
           </div>
         </section>

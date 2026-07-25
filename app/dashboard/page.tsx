@@ -27,7 +27,7 @@ const RECENT_ACTIVITY = [
     id: 3,
     name: "Marie-Claire L.",
     icon: "person",
-    message: "Félicitations pour le 100ème supporter !",
+    message: "Félicitations pour votre 100ème soutien !",
     amount: 5000,
     time: "Hier",
   },
@@ -408,7 +408,7 @@ export default function DashboardPage() {
           >
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm font-medium" style={{ color: "#5b403f" }}>
-                Supporters
+                Soutiens
               </span>
               <span className="material-symbols-outlined" style={{ color: "#496546" }}>
                 groups
@@ -593,7 +593,7 @@ export default function DashboardPage() {
                   Nouvel Objectif
                 </h3>
                 <p className="text-xs mt-1" style={{ color: "#5b403f" }}>
-                  Définissez un but pour vos supporters
+                  Définissez un but pour vos soutiens
                 </p>
               </button>
             </div>
