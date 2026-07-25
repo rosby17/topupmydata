@@ -194,8 +194,8 @@ function ExploreInner() {
           {/* Hero image */}
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB2POkZZ_LTisfcNhjPujF7GaWHPXUmRGeBuDndDWbiXSFd_b88_JWvXNgrX0RUJXfrrTZXtH4B4uMBf7oN3MHGxpSj7Ao-xUvSwA8GW6BFplNKv88iqYBcXlaXnhRJf7_ypbrSScS_Wgo6kiH5xzxGIU9wHalH-iLz2B4_ehrzhyk3wTbUK55tBOZYDGM8txwTWKdRK3uJhS1IjC29rj89Dsk5eDl_QDgPDpPcpbeU39ivkowLH9lhW-aCtBsVWq5mMfZPOlw7JRP"
-              alt="Creator workspace"
+              src="/images/hero-creator.png"
+              alt="Juliet Tech"
               className="w-full h-full object-cover"
             />
             <div
@@ -207,10 +207,10 @@ function ExploreInner() {
                 className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-2"
                 style={{ backgroundColor: "rgba(73,101,70,0.9)" }}
               >
-                Featured Creator
+                Créateur de la semaine
               </span>
-              <h3 className="text-xl font-bold">Thomas Delaunay</h3>
-              <p className="text-sm opacity-90">Digital Artist • 85% Financé</p>
+              <h3 className="text-xl font-bold">Juliet Tech</h3>
+              <p className="text-sm opacity-90">Créatrice de tutoriels • 85% Financé</p>
             </div>
             {/* Floating badge */}
             <div
@@ -222,14 +222,14 @@ function ExploreInner() {
           </div>
         </section>
 
-        {/* ── Thomas Delaunay Featured Creator ── */}
+        {/* ── Juliet Tech Featured Creator ── */}
         <section className="mb-16">
           <div className="bg-[#f0eee9] rounded-3xl p-8 border flex flex-col md:flex-row gap-8 items-center" style={{ borderColor: "#e4bdbc" }}>
             <div className="w-full md:w-1/3 relative">
               <img
                 className="w-full aspect-square object-cover rounded-2xl shadow-md"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpH-_N9Aa7GEYEImMjZ06spgX6AryXWbS6kP4cwswSyq9M99DrilfaNp8bxdhK9xLGqfD6FSvtD6DpP7oecJx9DOfAeLlDLpbgTa1dVlfbH5n_fU74krinfmgB1m7M2U7JqSQuMVMUgcDb1vxYCxNKOcb4gSt1revSgBaJ1SS3gFtnrwsH2e9Hn9B-2bw3fgA7_uZyKWgg8sQo7mqBOE6Zs9ijhnFc2JVbOaRxFfXO3X5keHFbDbTeIw-Kc04ZBDsVr6kWiYEcfb-K"
-                alt="Thomas Delaunay"
+                src="/images/hero-creator.png"
+                alt="Juliet Tech"
               />
               <div
                 className="absolute -top-4 -right-4 bg-white px-4 py-2 rounded-full shadow-md text-xs font-bold border flex items-center gap-2 animate-bounce"
@@ -242,18 +242,18 @@ function ExploreInner() {
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h2 className="text-3xl font-bold mb-2" style={{ color: "#1b1c19" }}>
-                    Thomas Delaunay
+                    Juliet Tech
                   </h2>
                   <span
                     className="px-3 py-1 rounded-full text-xs font-bold"
                     style={{ backgroundColor: "#c8e9c1", color: "#496546" }}
                   >
-                    Artiste Digital
+                    Créatrice de tutoriels
                   </span>
                 </div>
               </div>
               <p className="text-lg leading-relaxed mb-6" style={{ color: "#5b403f" }}>
-                &ldquo;Besoin de data pour uploader mon dernier court-métrage d&apos;animation 3D. Chaque giga compte pour le rendu final en 4K !&rdquo;
+                &ldquo;Besoin de data pour uploader mes prochains tutoriels vidéo sur le développement web. Chaque soutien m&apos;aide à propulser ma communauté !&rdquo;
               </p>
               <div className="bg-white p-6 rounded-2xl border" style={{ borderColor: "#e4bdbc" }}>
                 <div className="flex justify-between items-end mb-2">
@@ -272,7 +272,7 @@ function ExploreInner() {
                     className="w-full py-4 text-white rounded-xl text-lg font-bold shadow-md transition-all hover:opacity-90 active:scale-95"
                     style={{ backgroundColor: "#b20024" }}
                   >
-                    Payer les mégas à Thomas
+                    Payer les mégas à Juliet
                   </button>
                 </Link>
             </div>
