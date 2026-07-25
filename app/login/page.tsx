@@ -178,7 +178,7 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-4">
+            <div className="mt-6">
               <button
                 type="button"
                 onClick={() => { setLoading(true); setTimeout(() => router.push("/dashboard"), 800); }}
@@ -186,29 +186,9 @@ export default function LoginPage() {
                 style={{ borderColor: "#e4bdbc" }}
               >
                 <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
-                Google
-              </button>
-              <button
-                type="button"
-                onClick={() => { setLoading(true); setTimeout(() => router.push("/dashboard"), 800); }}
-                className="w-full flex justify-center items-center gap-2 py-3 px-4 border rounded-xl bg-white text-sm font-bold text-[#1b1c19] hover:bg-gray-50 transition-colors"
-                style={{ borderColor: "#e4bdbc" }}
-              >
-                <span className="material-symbols-outlined text-[#1b1c19]">apple</span>
-                Apple
+                Continuer avec Google
               </button>
             </div>
-            
-            <button
-              type="button"
-              onClick={() => { setLoading(true); setTimeout(() => router.push("/dashboard"), 800); }}
-              className="w-full mt-4 flex justify-center items-center gap-2 py-3 px-4 border rounded-xl bg-white text-sm font-bold text-[#1b1c19] hover:bg-gray-50 transition-colors"
-              style={{ borderColor: "#e4bdbc" }}
-            >
-              <span className="material-symbols-outlined text-[#496546]">smartphone</span>
-              Mobile Money / Mobile
-            </button>
-          </div>
 
           <p className="mt-8 text-center text-sm text-[#5b403f]">
             Pas encore de compte ?{" "}
