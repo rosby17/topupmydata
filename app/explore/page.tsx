@@ -151,7 +151,7 @@ function ExploreInner() {
               className="text-lg leading-relaxed max-w-lg"
               style={{ color: "#5b403f" }}
             >
-              Sur Top Up My Data, les dons sont reversés en cash directement aux créateurs pour financer leur connexion internet et propulser leurs streams, uploads et projets en ligne.
+              Sur Top Up My Data, les dons sont reversés en cash directement aux créateurs pour financer leur connexion internet, leurs factures d&apos;électricité, ou tout autre besoin essentiel pour produire de meilleurs contenus et propulser leurs streams, uploads et projets en ligne.
             </p>
             <div className="flex gap-4 flex-wrap">
               <Link href="/">
