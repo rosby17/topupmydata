@@ -300,82 +300,83 @@ function ExploreInner() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {ACTIVE_CAMPAIGNS.map((c, i) => (
-              <div
-                key={c.id}
-                className="bg-white rounded-2xl border flex flex-col md:flex-row gap-6 p-6 transition-all cursor-pointer"
-                style={{ borderColor: "#e4bdbc" }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
-                  (e.currentTarget as HTMLElement).style.boxShadow =
-                    "0px 8px 24px rgba(29,30,32,0.1)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                }}
-              >
+              <Link href="/" key={c.id}>
                 <div
-                  className="w-full md:w-44 rounded-xl overflow-hidden shrink-0"
-                  style={{ height: "176px" }}
+                  className="bg-white rounded-2xl border flex flex-col md:flex-row gap-6 p-6 transition-all cursor-pointer h-full"
+                  style={{ borderColor: "#e4bdbc" }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+                    (e.currentTarget as HTMLElement).style.boxShadow =
+                      "0px 8px 24px rgba(29,30,32,0.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                  }}
                 >
-                  <img
-                    src={c.img}
-                    alt={c.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-col justify-between flex-1 py-1">
-                  <div>
-                    <span
-                      className="text-xs font-semibold uppercase tracking-wider"
-                      style={{ color: "#496546" }}
-                    >
-                      {c.category}
-                    </span>
-                    <h3
-                      className="text-lg font-bold mt-1"
-                      style={{ color: "#1b1c19" }}
-                    >
-                      {c.title}
-                    </h3>
-                    <p
-                      className="text-sm mt-2 leading-relaxed"
-                      style={{
-                        color: "#5b403f",
-                        display: "-webkit-box",
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: "vertical",
-                        overflow: "hidden",
-                      }}
-                    >
-                      {c.description}
-                    </p>
+                  <div
+                    className="w-full md:w-44 rounded-xl overflow-hidden shrink-0"
+                    style={{ height: "176px" }}
+                  >
+                    <img
+                      src={c.img}
+                      alt={c.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="mt-4 space-y-2">
-                    <div className="flex justify-between items-end">
-                      <span className="text-xl font-bold" style={{ color: "#b20024" }}>
-                        {c.current}{" "}
-                        <span className="text-sm font-normal" style={{ color: "#5b403f" }}>
-                          / {c.total}
-                        </span>
-                      </span>
-                      <span className="text-sm font-bold" style={{ color: "#496546" }}>
-                        {c.pct}%
-                      </span>
-                    </div>
-                    <GaugeBar pct={c.pct} delay={i * 100} />
-                    <div className="flex justify-between text-xs" style={{ color: "#5b403f" }}>
-                      <span>{c.contributors} contributeurs</span>
+                  <div className="flex flex-col justify-between flex-1 py-1">
+                    <div>
                       <span
-                        className="font-medium"
-                        style={{ color: c.pct >= 90 ? "#b20024" : "#5b403f" }}
+                        className="text-xs font-semibold uppercase tracking-wider"
+                        style={{ color: "#496546" }}
                       >
-                        {c.daysLeft}
+                        {c.category}
                       </span>
+                      <h3
+                        className="text-lg font-bold mt-1"
+                        style={{ color: "#1b1c19" }}
+                      >
+                        {c.title}
+                      </h3>
+                      <p
+                        className="text-sm mt-2 leading-relaxed"
+                        style={{
+                          color: "#5b403f",
+                          display: "-webkit-box",
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {c.description}
+                      </p>
+                    </div>
+                    <div className="mt-4 space-y-2">
+                      <div className="flex justify-between items-end">
+                        <span className="text-xl font-bold" style={{ color: "#b20024" }}>
+                          {c.current}{" "}
+                          <span className="text-sm font-normal" style={{ color: "#5b403f" }}>
+                            / {c.total}
+                          </span>
+                        </span>
+                        <span className="text-sm font-bold" style={{ color: "#496546" }}>
+                          {c.pct}%
+                        </span>
+                      </div>
+                      <GaugeBar pct={c.pct} delay={i * 100} />
+                      <div className="flex justify-between text-xs" style={{ color: "#5b403f" }}>
+                        <span>{c.contributors} contributeurs</span>
+                        <span
+                          className="font-medium"
+                          style={{ color: c.pct >= 90 ? "#b20024" : "#5b403f" }}
+                        >
+                          {c.daysLeft}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
