@@ -8,9 +8,8 @@ interface NavbarProps {
 }
 
 const NAV_LINKS = [
-  { label: "Explore", href: "/explore" },
-  { label: "Feed", href: "/explore" },
-  { label: "My Support", href: "/dashboard" },
+  { label: "Explorer", href: "/explore" },
+  { label: "Tableau de bord", href: "/dashboard" },
 ];
 
 /* ── Top Up My Data Custom SVG Logo ── */
