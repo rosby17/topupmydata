@@ -61,23 +61,32 @@ export default function Navbar({ onSupportClick }: NavbarProps) {
 
           {!isAuth && (
             <div className="hidden md:flex gap-6">
-              {NAV_LINKS.map((item) => {
-                const isActive = pathname === item.href;
-                return (
-                  <Link key={item.label} href={item.href}>
-                    <span
-                      className="text-sm font-medium transition-colors duration-200 cursor-pointer pb-1"
-                      style={{
-                        color: isActive ? "#b20024" : "#5b403f",
-                        borderBottom: isActive ? "2px solid #b20024" : "2px solid transparent",
-                        letterSpacing: "0.05em",
-                      }}
-                    >
-                      {item.label}
-                    </span>
-                  </Link>
-                );
-              })}
+              <Link href="/explore">
+                <span
+                  className="text-sm font-medium transition-colors duration-200 cursor-pointer pb-1"
+                  style={{
+                    color: pathname === "/explore" ? "#b20024" : "#5b403f",
+                    borderBottom: pathname === "/explore" ? "2px solid #b20024" : "2px solid transparent",
+                    letterSpacing: "0.05em",
+                  }}
+                >
+                  Explorer
+                </span>
+              </Link>
+              {pathname === "/dashboard" && (
+                <Link href="/dashboard">
+                  <span
+                    className="text-sm font-medium transition-colors duration-200 cursor-pointer pb-1"
+                    style={{
+                      color: pathname === "/dashboard" ? "#b20024" : "#5b403f",
+                      borderBottom: pathname === "/dashboard" ? "2px solid #b20024" : "2px solid transparent",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    Tableau de bord
+                  </span>
+                </Link>
+              )}
             </div>
           )}
         </div>

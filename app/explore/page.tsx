@@ -223,6 +223,24 @@ function ExploreInner() {
           </div>
         </section>
 
+        {/* ── Pourquoi Top Up My Data ? ── */}
+        <section className="bg-white rounded-3xl p-8 md:p-12 border shadow-sm my-16" style={{ borderColor: "#e4bdbc" }}>
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-2" style={{ backgroundColor: "#ffdad8", color: "#b20024" }}>
+              <span className="material-symbols-outlined text-2xl">campaign</span>
+            </div>
+            <h2 className="text-3xl font-bold" style={{ color: "#1b1c19", letterSpacing: "-0.01em" }}>
+              Pourquoi <span style={{ color: "#b20024" }}>Top Up My Data</span> ?
+            </h2>
+            <p className="text-lg leading-relaxed" style={{ color: "#5b403f" }}>
+              En Afrique, la majorité des créateurs de contenu ne sont pas rémunérés à leur juste valeur par les plateformes digitales. Les revenus liés à la monétisation classique sont souvent insignifiants face aux coûts de production réels.
+            </p>
+            <p className="text-lg leading-relaxed font-semibold" style={{ color: "#496546" }}>
+              Face à cette frustration, nous avons créé Top Up My Data : un espace où votre communauté peut vous soutenir financièrement et directement, afin que vous puissiez financer sereinement votre matériel, vos factures et votre production.
+            </p>
+          </div>
+        </section>
+
         {/* ── Search & Filter ── */}
         <section className="space-y-5">
           <form onSubmit={handleSearch} className="flex flex-col md:flex-row gap-4 items-center">
