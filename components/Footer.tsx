@@ -113,12 +113,8 @@ export default function Footer() {
         style={{ maxWidth: "1200px", borderColor: "rgba(228, 189, 188, 0.3)" }}
       >
         <p className="text-xs" style={{ color: "#5b403f" }}>
-          © 2024 Top Up My Data. Tous droits réservés. Fait avec ❤️ pour propulser les créateurs africains en data.
+          © 2024 Top Up My Data. Tous droits réservés. Fait avec ❤️ pour propulser les créateurs africains.
         </p>
-        <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#b20024" }}>
-          <span className="material-symbols-outlined text-sm">bolt</span>
-          <span>500 FCFA = 1 Go de connexion garantie</span>
-        </div>
       </div>
     </footer>
   );
