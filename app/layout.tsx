@@ -10,9 +10,9 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CreatorCare – Soutenez vos créateurs préférés",
+  title: "Top Up My Data – Offrez des gigas à vos créateurs préférés",
   description:
-    "Propulsez la créativité locale par le soutien communautaire. Payez les mégas de vos créateurs favoris en quelques clics.",
+    "La 1ère plateforme qui transforme vos dons en connexion internet (500 FCFA = 1 Go). Propulsez la créativité africaine en rechargeant la data de vos créateurs favoris !",
 };
 
 export default function RootLayout({
