@@ -10,6 +10,7 @@ export default function CreateCampaign() {
   const [amount, setAmount] = useState("");
   const [deadline, setDeadline] = useState("");
   const [image, setImage] = useState<string | null>(null);
+  const [isPublic, setIsPublic] = useState(true);
 
   const calculateDaysRemaining = (dateStr: string) => {
     if (!dateStr) return "Sans limite";
@@ -190,7 +191,37 @@ export default function CreateCampaign() {
                         className="w-full bg-[#fbf9f4] border focus:ring-1 focus:ring-[#b20024] rounded-xl pl-12 pr-4 py-3.5 text-sm outline-none transition-all"
                         style={{ borderColor: "#e4bdbc" }}
                       />
+                  </div>
+                </div>
+              </div>
+
+              {/* Visibility Toggle */}
+              <div className="flex flex-col gap-2 p-4 rounded-xl border mt-2 bg-[#fbf9f4]" style={{ borderColor: "#e4bdbc" }}>
+                  <label className="text-sm font-bold uppercase tracking-wider text-[#5b403f]">
+                    Visibilité de la cagnotte
+                  </label>
+                  <div className="flex items-center justify-between gap-4 mt-1">
+                    <div className="flex-1">
+                      <p className="text-sm font-bold" style={{ color: "#1b1c19" }}>
+                        {isPublic ? "Publique" : "Privée"}
+                      </p>
+                      <p className="text-xs text-[#5b403f] mt-0.5">
+                        {isPublic 
+                          ? "La cagnotte sera visible publiquement sur la plateforme et dans les résultats de recherche." 
+                          : "La cagnotte sera uniquement accessible via un lien direct partagé à votre communauté."}
+                      </p>
                     </div>
+                    <button
+                      type="button"
+                      onClick={() => setIsPublic(!isPublic)}
+                      className="w-12 h-6 rounded-full p-1 transition-colors duration-200 focus:outline-none flex items-center shrink-0"
+                      style={{ backgroundColor: isPublic ? "#496546" : "#e4bdbc" }}
+                    >
+                      <div
+                        className="w-4 h-4 rounded-full bg-white shadow-md transform transition-transform duration-200"
+                        style={{ transform: isPublic ? "translateX(24px)" : "translateX(0)" }}
+                      />
+                    </button>
                   </div>
                 </div>
 

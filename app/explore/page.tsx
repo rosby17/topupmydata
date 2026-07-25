@@ -144,34 +144,34 @@ function ExploreInner() {
               className="text-4xl md:text-5xl font-bold leading-tight"
               style={{ color: "#1b1c19", letterSpacing: "-0.02em" }}
             >
-              Rechargez le travail créatif de vos{" "}
+              Rechargez les mégas de vos{" "}
               <span style={{ color: "#b20024" }}>créateurs préférés</span> ⚡
             </h1>
             <p
               className="text-lg leading-relaxed max-w-lg"
               style={{ color: "#5b403f" }}
             >
-              Sur Top Up My Data, les dons sont reversés en cash directement aux créateurs pour financer leur connexion internet, leurs factures d&apos;électricité, ou tout autre besoin essentiel pour produire de meilleurs contenus et propulser leurs streams, uploads et projets en ligne.
+              Donnez-leur la force de continuer à produire de superbes contenus. Financez directement leur connexion internet pour propulser leurs streams, uploads et projets en ligne.
             </p>
             <div className="flex gap-4 flex-wrap">
-              <Link href="/">
+              <a href="#cagnottes">
                 <button
                   className="px-8 py-4 rounded-xl text-base font-bold shadow-md transition-all hover:opacity-90 active:scale-95 flex items-center gap-2"
                   style={{ backgroundColor: "#b20024", color: "#ffffff" }}
                 >
-                  <span className="material-symbols-outlined">bolt</span>
-                  Offrir des Gigas
+                  <span className="material-symbols-outlined">explore</span>
+                  Voir les cagnottes
                 </button>
-              </Link>
-              <Link href="/signup">
+              </a>
+              <a href="#pourquoi-nous-choisir">
                 <button
                   className="px-8 py-4 rounded-xl text-base font-bold border transition-all hover:opacity-80 flex items-center gap-2"
                   style={{ borderColor: "#b20024", color: "#b20024" }}
                 >
-                  <span className="material-symbols-outlined">rocket_launch</span>
-                  Devenir créateur
+                  <span className="material-symbols-outlined">help</span>
+                  Comment ça marche
                 </button>
-              </Link>
+              </a>
             </div>
             {/* Stats strip */}
             <div className="flex gap-8 pt-2">
@@ -220,24 +220,6 @@ function ExploreInner() {
             >
               🔥 12 soutiens aujourd&apos;hui
             </div>
-          </div>
-        </section>
-
-        {/* ── Pourquoi Top Up My Data ? ── */}
-        <section className="bg-white rounded-3xl p-8 md:p-12 border shadow-sm my-16" style={{ borderColor: "#e4bdbc" }}>
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-2" style={{ backgroundColor: "#ffdad8", color: "#b20024" }}>
-              <span className="material-symbols-outlined text-2xl">campaign</span>
-            </div>
-            <h2 className="text-3xl font-bold" style={{ color: "#1b1c19", letterSpacing: "-0.01em" }}>
-              Pourquoi <span style={{ color: "#b20024" }}>Top Up My Data</span> ?
-            </h2>
-            <p className="text-lg leading-relaxed" style={{ color: "#5b403f" }}>
-              En Afrique, la majorité des créateurs de contenu ne sont pas rémunérés à leur juste valeur par les plateformes digitales. Les revenus liés à la monétisation classique sont souvent insignifiants face aux coûts de production réels.
-            </p>
-            <p className="text-lg leading-relaxed font-semibold" style={{ color: "#496546" }}>
-              Face à cette frustration, nous avons créé Top Up My Data : un espace où votre communauté peut vous soutenir financièrement et directement, afin que vous puissiez financer sereinement votre matériel, vos factures et votre production.
-            </p>
           </div>
         </section>
 
@@ -505,66 +487,93 @@ function ExploreInner() {
           )}
         </section>
 
-        {/* ── Newsletter ── */}
-        <section
-          className="rounded-2xl p-10 text-center relative overflow-hidden"
-          style={{ backgroundColor: "#1b1c19" }}
-        >
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              background:
-                "radial-gradient(circle at 20% 50%, #b20024 0%, transparent 60%), radial-gradient(circle at 80% 50%, #496546 0%, transparent 60%)",
-            }}
-          />
-          <div className="relative z-10">
-            <h2 className="text-3xl font-bold mb-3" style={{ color: "#ffffff" }}>
-              Ne manquez aucun créateur 🚀
+        {/* ── Pourquoi choisir Top Up My Data ? ── */}
+        <section id="pourquoi-nous-choisir" className="bg-white rounded-3xl p-8 md:p-12 border shadow-sm my-16" style={{ borderColor: "#e4bdbc" }}>
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-2" style={{ backgroundColor: "#ffdad8", color: "#b20024" }}>
+              <span className="material-symbols-outlined text-2xl">campaign</span>
+            </div>
+            <h2 className="text-3xl font-bold" style={{ color: "#1b1c19", letterSpacing: "-0.01em" }}>
+              Pourquoi choisir <span style={{ color: "#b20024" }}>Top Up My Data</span> ?
             </h2>
-            <p className="text-base mb-8 max-w-lg mx-auto" style={{ color: "rgba(255,255,255,0.7)" }}>
-              Recevez chaque semaine une sélection des meilleurs créateurs et
-              cagnottes actives directement dans votre boîte mail.
+            <p className="text-lg leading-relaxed" style={{ color: "#5b403f" }}>
+              En Afrique, la majorité des créateurs de contenu ne sont pas rémunérés à leur juste valeur par les plateformes digitales. Les revenus liés à la monétisation classique sont souvent insignifiants face aux coûts de production réels.
             </p>
-            {emailSent ? (
-              <div
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold"
-                style={{ backgroundColor: "#c8e9c1", color: "#496546" }}
-              >
-                <span className="material-symbols-outlined" style={{ fontSize: "18px", fontVariationSettings: "'FILL' 1" }}>
-                  check_circle
-                </span>
-                Inscription confirmée ! À bientôt.
+            <p className="text-lg leading-relaxed font-semibold" style={{ color: "#496546" }}>
+              Face à cette frustration, nous avons créé Top Up My Data : un espace où votre communauté peut vous soutenir financièrement et directement, afin que vous puissiez financer sereinement votre matériel, vos factures et votre production.
+            </p>
+          </div>
+        </section>
+
+        {/* ── Ce que les gens pensent de Top Up My Data ── */}
+        <section className="space-y-6 my-16">
+          <h2 className="text-2xl font-bold text-center" style={{ color: "#1b1c19" }}>
+            Ce que les gens pensent de <span style={{ color: "#b20024" }}>Top Up My Data</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Juliet Tech",
+                role: "Créatrice de tutoriels",
+                quote: "Grâce aux cagnottes de ma communauté, j'ai pu payer ma connexion internet haut débit et mon électricité pour streamer tous les soirs sans interruption.",
+              },
+              {
+                name: "Marie Dubois",
+                role: "Artiste Digitale",
+                quote: "C'est tellement simple de lancer un objectif pour un nouveau projet créatif. Mes abonnés adorent savoir exactement ce qu'ils financent.",
+              },
+              {
+                name: "Amadou S.",
+                role: "Soutien Actif",
+                quote: "Je préfère largement offrir des FCFA convertis en mégas pour mes créateurs préférés plutôt que des pourboires classiques. On voit le résultat en direct !",
+              },
+            ].map((t, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-2xl border shadow-sm flex flex-col justify-between" style={{ borderColor: "#e4bdbc" }}>
+                <p className="text-sm italic leading-relaxed mb-6" style={{ color: "#5b403f" }}>
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div>
+                  <h4 className="font-bold text-base" style={{ color: "#1b1c19" }}>{t.name}</h4>
+                  <p className="text-xs font-semibold" style={{ color: "#496546" }}>{t.role}</p>
+                </div>
               </div>
-            ) : (
-              <form
-                className="flex gap-3 justify-center max-w-md mx-auto"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  if (email.trim()) setEmailSent(true);
-                }}
-              >
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="votre@email.com"
-                  className="flex-1 outline-none text-sm rounded-xl px-4 py-3"
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.1)",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    color: "#ffffff",
-                  }}
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 rounded-xl text-sm font-bold transition-all active:scale-95 hover:opacity-90"
-                  style={{ backgroundColor: "#b20024", color: "#ffffff" }}
-                >
-                  S&apos;inscrire
-                </button>
-              </form>
-            )}
+            ))}
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section id="faq" className="space-y-6 my-16">
+          <h2 className="text-2xl font-bold text-center" style={{ color: "#1b1c19" }}>
+            Questions Fréquentes (FAQ)
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                q: "Comment fonctionne le reversement des dons ?",
+                a: "90% des dons reçus sont directement reversés en cash sur le compte du créateur. Les 10% restants servent à couvrir les frais de transaction mobile money et d'infrastructure de la plateforme.",
+              },
+              {
+                q: "Puis-je créer une cagnotte privée ?",
+                a: "Absolument. Lors de la création de votre cagnotte, vous pouvez choisir de la laisser privée. Elle ne sera pas listée sur la page d'exploration publique et ne sera accessible que via le lien direct que vous partagerez avec votre communauté.",
+              },
+              {
+                q: "Quelles sont les méthodes de retrait disponibles ?",
+                a: "Les créateurs peuvent demander le retrait de leurs fonds à tout moment via Mobile Money (Orange Money, MTN MoMo, Wave, etc.) ou par virement bancaire directement depuis leur console d'administration.",
+              },
+              {
+                q: "Y a-t-il une limite de durée pour les cagnottes ?",
+                a: "Non. Vous pouvez définir une date limite pour stimuler votre communauté, ou choisir de laisser votre cagnotte ouverte sans limite de temps pour recevoir des soutiens continus.",
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-2xl border shadow-sm" style={{ borderColor: "#e4bdbc" }}>
+                <h4 className="font-bold text-base mb-2" style={{ color: "#b20024" }}>
+                  {item.q}
+                </h4>
+                <p className="text-sm leading-relaxed" style={{ color: "#5b403f" }}>
+                  {item.a}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
       </main>

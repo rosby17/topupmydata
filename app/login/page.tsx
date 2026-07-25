@@ -21,6 +21,7 @@ export default function LoginPage() {
     setError("");
     setTimeout(() => {
       setLoading(false);
+      sessionStorage.setItem("isLoggedIn", "true");
       router.push("/dashboard");
     }, 1000);
   };
@@ -181,7 +182,11 @@ export default function LoginPage() {
             <div className="mt-6">
               <button
                 type="button"
-                onClick={() => { setLoading(true); setTimeout(() => router.push("/dashboard"), 800); }}
+                onClick={() => {
+                  setLoading(true);
+                  sessionStorage.setItem("isLoggedIn", "true");
+                  setTimeout(() => router.push("/dashboard"), 800);
+                }}
                 className="w-full flex justify-center items-center gap-2 py-3 px-4 border rounded-xl bg-white text-sm font-bold text-[#1b1c19] hover:bg-gray-50 transition-colors"
                 style={{ borderColor: "#e4bdbc" }}
               >

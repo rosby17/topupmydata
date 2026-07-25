@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface NavbarProps {
   onSupportClick?: () => void;
@@ -17,12 +17,12 @@ export function TopUpLogo({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <svg viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       {/* Outer wifi wave */}
-      <path d="M 15 35 A 45 45 0 0 1 85 35" stroke="#ff0055" strokeWidth="10" strokeLinecap="round" />
+      <path d="M 15 35 A 45 45 0 0 1 85 35" stroke="#b20024" strokeWidth="10" strokeLinecap="round" />
       {/* Inner wifi wave */}
-      <path d="M 28 50 A 28 28 0 0 1 72 50" stroke="#ff0055" strokeWidth="10" strokeLinecap="round" />
+      <path d="M 28 50 A 28 28 0 0 1 72 50" stroke="#b20024" strokeWidth="10" strokeLinecap="round" />
       {/* Coin circle */}
-      <circle cx="50" cy="70" r="18" fill="#ff0055" />
-      <circle cx="50" cy="70" r="14" stroke="#ffffff" strokeWidth="1.5" fill="#ff0055" />
+      <circle cx="50" cy="70" r="18" fill="#b20024" />
+      <circle cx="50" cy="70" r="14" stroke="#ffffff" strokeWidth="1.5" fill="#b20024" />
       <text x="50" y="76" textAnchor="middle" fill="#ffffff" fontSize="16" fontWeight="800" fontFamily="sans-serif">$</text>
     </svg>
   );
@@ -32,6 +32,20 @@ export default function Navbar({ onSupportClick }: NavbarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const [search, setSearch] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  useEffect(() => {
+    const logged = sessionStorage.getItem("isLoggedIn") === "true" || pathname.startsWith("/dashboard") || pathname.startsWith("/admin");
+    setIsLoggedIn(logged);
+  }, [pathname]);
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("isLoggedIn");
+    setIsLoggedIn(false);
+    setShowDropdown(false);
+    router.push("/explore");
+  };
 
   const isProfile = pathname === "/";
   const isPayment = pathname === "/pay";
@@ -73,7 +87,7 @@ export default function Navbar({ onSupportClick }: NavbarProps) {
                   Explorer
                 </span>
               </Link>
-              {pathname === "/dashboard" && (
+              {isLoggedIn ? (
                 <Link href="/dashboard">
                   <span
                     className="text-sm font-medium transition-colors duration-200 cursor-pointer pb-1"
@@ -86,6 +100,25 @@ export default function Navbar({ onSupportClick }: NavbarProps) {
                     Tableau de bord
                   </span>
                 </Link>
+              ) : (
+                <>
+                  <a href="/explore#pourquoi-nous-choisir">
+                    <span
+                      className="text-sm font-medium transition-colors duration-200 cursor-pointer pb-1 hover:text-[#b20024]"
+                      style={{ color: "#5b403f", letterSpacing: "0.05em" }}
+                    >
+                      Pourquoi nous choisir
+                    </span>
+                  </a>
+                  <a href="/explore#faq">
+                    <span
+                      className="text-sm font-medium transition-colors duration-200 cursor-pointer pb-1 hover:text-[#b20024]"
+                      style={{ color: "#5b403f", letterSpacing: "0.05em" }}
+                    >
+                      FAQ
+                    </span>
+                  </a>
+                </>
               )}
             </div>
           )}
@@ -157,11 +190,12 @@ export default function Navbar({ onSupportClick }: NavbarProps) {
             </button>
           )}
 
-          {/* Avatar — on dashboard */}
-          {pathname === "/dashboard" && (
-            <Link href="/dashboard">
+          {/* Auth State Buttons / Dropdown */}
+          {isLoggedIn ? (
+            <div className="relative">
               <div
-                className="w-8 h-8 rounded-full overflow-hidden border cursor-pointer"
+                onClick={() => setShowDropdown(!showDropdown)}
+                className="w-8 h-8 rounded-full overflow-hidden border cursor-pointer hover:opacity-85 transition-opacity"
                 style={{ borderColor: "#e4bdbc" }}
               >
                 <img
@@ -170,40 +204,72 @@ export default function Navbar({ onSupportClick }: NavbarProps) {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </Link>
-          )}
 
-          {!isAuth ? (
-            <>
-              <Link href="/login">
-                <button
-                  className="text-sm font-semibold transition-colors hover:opacity-80 px-3 py-1.5"
-                  style={{ color: "#5b403f" }}
+              {/* Profile Dropdown */}
+              {showDropdown && (
+                <div
+                  className="absolute right-0 mt-2 w-48 rounded-xl border bg-white shadow-lg py-2 z-50 transition-all text-sm"
+                  style={{ borderColor: "#e4bdbc" }}
                 >
-                  Sign In
-                </button>
-              </Link>
-
-              <Link href="/signup">
-                <button
-                  className="px-5 py-2 rounded-lg text-sm font-bold transition-all active:scale-90 hover:opacity-90 shadow-sm flex items-center gap-1.5"
-                  style={{ backgroundColor: "#d62839", color: "#fff2f1" }}
-                >
-                  <span className="material-symbols-outlined text-base">rocket_launch</span>
-                  Start Creating
-                </button>
-              </Link>
-            </>
+                  <Link
+                    href="/dashboard"
+                    onClick={() => setShowDropdown(false)}
+                    className="block px-4 py-2.5 hover:bg-gray-50 text-[#1b1c19] font-medium"
+                  >
+                    Tableau de bord
+                  </Link>
+                  <Link
+                    href="/dashboard"
+                    onClick={() => setShowDropdown(false)}
+                    className="block px-4 py-2.5 hover:bg-gray-50 text-[#1b1c19] font-medium border-b"
+                    style={{ borderColor: "#f5f3ee" }}
+                  >
+                    Paramètres
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="w-full text-left px-4 py-2.5 hover:bg-gray-50 text-[#b20024] font-bold"
+                  >
+                    Déconnexion
+                  </button>
+                </div>
+              )}
+            </div>
           ) : (
-            <Link href="/explore">
-              <button
-                className="text-sm font-medium transition-colors hover:opacity-80 flex items-center gap-1"
-                style={{ color: "#5b403f" }}
-              >
-                <span>Accueil</span>
-                <span className="material-symbols-outlined text-base">home</span>
-              </button>
-            </Link>
+            <>
+              {!isAuth ? (
+                <>
+                  <Link href="/login">
+                    <button
+                      className="text-sm font-semibold transition-colors hover:opacity-80 px-3 py-1.5"
+                      style={{ color: "#5b403f" }}
+                    >
+                      Se connecter
+                    </button>
+                  </Link>
+
+                  <Link href="/signup">
+                    <button
+                      className="px-5 py-2 rounded-lg text-sm font-bold transition-all active:scale-90 hover:opacity-90 shadow-sm flex items-center gap-1.5"
+                      style={{ backgroundColor: "#b20024", color: "#ffffff" }}
+                    >
+                      <span className="material-symbols-outlined text-base">rocket_launch</span>
+                      Commencer
+                    </button>
+                  </Link>
+                </>
+              ) : (
+                <Link href="/explore">
+                  <button
+                    className="text-sm font-medium transition-colors hover:opacity-80 flex items-center gap-1"
+                    style={{ color: "#5b403f" }}
+                  >
+                    <span>Accueil</span>
+                    <span className="material-symbols-outlined text-base">home</span>
+                  </button>
+                </Link>
+              )}
+            </>
           )}
         </div>
       </div>

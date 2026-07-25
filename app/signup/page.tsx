@@ -23,6 +23,7 @@ export default function SignupPage() {
     setError("");
     setTimeout(() => {
       setLoading(false);
+      sessionStorage.setItem("isLoggedIn", "true");
       router.push("/dashboard");
     }, 1500);
   };
